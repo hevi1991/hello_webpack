@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "a demo",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --open --mode=development"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "private": true,
   "devDependencies": {
@@ -14,9 +13,11 @@
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
