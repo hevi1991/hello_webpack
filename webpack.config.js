@@ -1,8 +1,10 @@
 const path = require('path')
+const HWP = require('html-webpack-plugin')
+
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: "main.js",
+        filename: "main.[chunkhash].js",
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -33,5 +35,10 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new HWP({
+            title: 'Caching'
+        })
+    ]
 }
