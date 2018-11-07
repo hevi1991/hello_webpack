@@ -1,24 +1,17 @@
 import _ from "lodash"
-import './style.css'
-import Pic from './cat.jpg'
-import Data from './data.xml'
+import printMe from './print'
 
 function component() {
     var element = document.createElement('div')
+    var btn = document.createElement('button')
 
     // lodash 由脚本引入
     element.innerHTML = _.join(['Hello', 'webpack'], ' ')
 
-    // 引入css
-    element.classList.add('hello')
+    btn.innerHTML = 'Click me and check the console'
+    btn.onclick = printMe
 
-    // 引入图片
-    const myPic = new Image()
-    myPic.src = Pic
-    element.appendChild(myPic)
-
-    // 输入解析后的xml
-    console.log(Data)
+    element.appendChild(btn)
 
     return element
 }
