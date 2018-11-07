@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "a demo",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --mode=production"
   },
   "private": true,
   "devDependencies": {

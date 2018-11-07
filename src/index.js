@@ -1,26 +1,14 @@
-import _ from "lodash"
-import './style.css'
-import Pic from './cat.jpg'
-import Data from './data.xml'
+import {cube} from "./math";
 
 function component() {
-    var element = document.createElement('div')
+    let element = document.createElement('div');
 
-    // lodash 由脚本引入
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ')
+    element.innerHTML = [
+        'Hello webpack!',
+        '5 cubed is equal to ' + cube(5)
+    ].join('\n\n');
 
-    // 引入css
-    element.classList.add('hello')
-
-    // 引入图片
-    const myPic = new Image()
-    myPic.src = Pic
-    element.appendChild(myPic)
-
-    // 输入解析后的xml
-    console.log(Data)
-
-    return element
+    return element;
 }
 
-document.body.appendChild(component())
+document.body.appendChild(component());
